@@ -7,11 +7,11 @@ public final class Option: Hashable, Printable {
 	public let shortName: UnicodeScalar
 	public let longopt: option
 
-	public init?(_ name: String, _ shortName: UnicodeScalar? = nil) {
+	public init?(_ name: String) {
 		self.name = name
 
 		if let firstCharacter = first(name.utf8).map({ UnicodeScalar($0) }) {
-			self.shortName = shortName ?? firstCharacter
+			self.shortName = firstCharacter
 			self.longopt = option(name: self.name, has_arg: no_argument, flag: nil, val: Int32(self.shortName.value))
 		}
 		else {

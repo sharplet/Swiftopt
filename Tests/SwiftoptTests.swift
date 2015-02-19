@@ -7,7 +7,7 @@ import Runes
 
 class SwiftoptTests: XCTestCase {
 	func testItParsesSimpleFlags() {
-		let result = Option("verbose", "v") >>- { parse([$0], ["-v"])[$0] }
+		let result = Option("verbose") >>- { parse([$0], ["-v"])[$0] }
 		assertEqual(result?.enabled, true)
 	}
 }
