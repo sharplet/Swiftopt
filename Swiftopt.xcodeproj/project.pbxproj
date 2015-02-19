@@ -11,11 +11,14 @@
 		CE89CF701A928068003CBB97 /* Swiftopt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE89CF641A928068003CBB97 /* Swiftopt.framework */; };
 		CE89CF811A9281F4003CBB97 /* Swiftopt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89CF801A9281F4003CBB97 /* Swiftopt.swift */; };
 		CE89D04A1A928353003CBB97 /* SwiftoptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89D0491A928353003CBB97 /* SwiftoptTests.swift */; };
+		CE89D04C1A9285E4003CBB97 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89D04B1A9285E4003CBB97 /* Option.swift */; };
+		CE89D04E1A928637003CBB97 /* ParsedArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89D04D1A928637003CBB97 /* ParsedArgument.swift */; };
 		CE8D80511A95FA4100D2D678 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D80501A95FA4100D2D678 /* Runes.framework */; };
 		CE8D80521A95FA4100D2D678 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D80501A95FA4100D2D678 /* Runes.framework */; };
 		CE8D80551A95FAFE00D2D678 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE8D80501A95FA4100D2D678 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE8D80571A95FC2C00D2D678 /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D80561A95FC2C00D2D678 /* Assertions.framework */; };
 		CE8D80581A95FC3B00D2D678 /* Assertions.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE8D80561A95FC2C00D2D678 /* Assertions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE8D805A1A95FF1500D2D678 /* UnsafePointerAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D80591A95FF1500D2D678 /* UnsafePointerAdditions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +53,11 @@
 		CE89CF751A928068003CBB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE89CF801A9281F4003CBB97 /* Swiftopt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftopt.swift; sourceTree = "<group>"; };
 		CE89D0491A928353003CBB97 /* SwiftoptTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftoptTests.swift; sourceTree = "<group>"; };
+		CE89D04B1A9285E4003CBB97 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		CE89D04D1A928637003CBB97 /* ParsedArgument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedArgument.swift; sourceTree = "<group>"; };
 		CE8D80501A95FA4100D2D678 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Runes.framework; sourceTree = "<group>"; };
 		CE8D80561A95FC2C00D2D678 /* Assertions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Assertions.framework; sourceTree = "<group>"; };
+		CE8D80591A95FF1500D2D678 /* UnsafePointerAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsafePointerAdditions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				CE89CF691A928068003CBB97 /* Swiftopt.h */,
+				CE89D04B1A9285E4003CBB97 /* Option.swift */,
+				CE89D04D1A928637003CBB97 /* ParsedArgument.swift */,
 				CE89CF801A9281F4003CBB97 /* Swiftopt.swift */,
+				CE8D80591A95FF1500D2D678 /* UnsafePointerAdditions.swift */,
 				CE89CF671A928068003CBB97 /* Supporting Files */,
 			);
 			path = Source;
@@ -264,6 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE89D04E1A928637003CBB97 /* ParsedArgument.swift in Sources */,
+				CE8D805A1A95FF1500D2D678 /* UnsafePointerAdditions.swift in Sources */,
+				CE89D04C1A9285E4003CBB97 /* Option.swift in Sources */,
 				CE89CF811A9281F4003CBB97 /* Swiftopt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
