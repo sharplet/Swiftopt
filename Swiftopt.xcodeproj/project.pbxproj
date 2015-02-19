@@ -11,6 +11,11 @@
 		CE89CF701A928068003CBB97 /* Swiftopt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE89CF641A928068003CBB97 /* Swiftopt.framework */; };
 		CE89CF811A9281F4003CBB97 /* Swiftopt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89CF801A9281F4003CBB97 /* Swiftopt.swift */; };
 		CE89D04A1A928353003CBB97 /* SwiftoptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89D0491A928353003CBB97 /* SwiftoptTests.swift */; };
+		CE8D80511A95FA4100D2D678 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D80501A95FA4100D2D678 /* Runes.framework */; };
+		CE8D80521A95FA4100D2D678 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D80501A95FA4100D2D678 /* Runes.framework */; };
+		CE8D80551A95FAFE00D2D678 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE8D80501A95FA4100D2D678 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE8D80571A95FC2C00D2D678 /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8D80561A95FC2C00D2D678 /* Assertions.framework */; };
+		CE8D80581A95FC3B00D2D678 /* Assertions.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE8D80561A95FC2C00D2D678 /* Assertions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +28,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CE8D80541A95FAF700D2D678 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE8D80581A95FC3B00D2D678 /* Assertions.framework in CopyFiles */,
+				CE8D80551A95FAFE00D2D678 /* Runes.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CE89CF641A928068003CBB97 /* Swiftopt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftopt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE89CF681A928068003CBB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,8 +49,9 @@
 		CE89CF6F1A928068003CBB97 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE89CF751A928068003CBB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE89CF801A9281F4003CBB97 /* Swiftopt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftopt.swift; sourceTree = "<group>"; };
-		CE89CF861A92822C003CBB97 /* Madness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Madness.framework; sourceTree = "<group>"; };
 		CE89D0491A928353003CBB97 /* SwiftoptTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftoptTests.swift; sourceTree = "<group>"; };
+		CE8D80501A95FA4100D2D678 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Runes.framework; sourceTree = "<group>"; };
+		CE8D80561A95FC2C00D2D678 /* Assertions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Assertions.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8D80511A95FA4100D2D678 /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8D80521A95FA4100D2D678 /* Runes.framework in Frameworks */,
 				CE89CF701A928068003CBB97 /* Swiftopt.framework in Frameworks */,
+				CE8D80571A95FC2C00D2D678 /* Assertions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +150,8 @@
 		CE89CF851A92822C003CBB97 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				CE89CF861A92822C003CBB97 /* Madness.framework */,
+				CE8D80561A95FC2C00D2D678 /* Assertions.framework */,
+				CE8D80501A95FA4100D2D678 /* Runes.framework */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -171,6 +195,7 @@
 				CE89CF6B1A928068003CBB97 /* Sources */,
 				CE89CF6C1A928068003CBB97 /* Frameworks */,
 				CE89CF6D1A928068003CBB97 /* Resources */,
+				CE8D80541A95FAF700D2D678 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -353,6 +378,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -372,6 +401,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -389,6 +422,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -409,6 +443,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -435,6 +470,7 @@
 				CE89CF7C1A928068003CBB97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE89CF7D1A928068003CBB97 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +479,7 @@
 				CE89CF7F1A928068003CBB97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,10 @@
+framework module Assertions {
+  umbrella header "Assertions.h"
+
+  export *
+  module * { export * }
+}
+
+module Assertions.Swift {
+    header "Assertions-Swift.h"
+}
