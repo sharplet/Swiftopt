@@ -2,22 +2,40 @@
 
 import Darwin
 
-public final class Option: Hashable, Printable {
-	public let name: String
-	public let shortName: UnicodeScalar
-	public let longopt: option
+public enum Option: Hashable, Printable {
+	case Switch(String, UnicodeScalar, option)
 
-	public init?(_ name: String) {
-		self.name = name
-
-		if let firstCharacter = first(name.utf8).map({ UnicodeScalar($0) }) {
-			self.shortName = firstCharacter
-			self.longopt = option(name: self.name, has_arg: no_argument, flag: nil, val: Int32(self.shortName.value))
+	public init?(name: String) {
+		if let shortName = first(name.utf8).map({ UnicodeScalar($0) }) {
+			self = .Switch(
+				name,
+				shortName,
+				option(name: name, has_arg: no_argument, flag: nil, val: Int32(shortName.value))
+			)
 		}
 		else {
-			self.shortName = "\0"
-			self.longopt = option()
 			return nil
+		}
+	}
+
+	public var name: String {
+		switch self {
+		case let .Switch(name, _, _):
+			return name
+		}
+	}
+
+	public var shortName: UnicodeScalar {
+		switch self {
+		case let .Switch(_, shortName, _):
+			return shortName
+		}
+	}
+
+	public var longopt: option {
+		switch self {
+		case let .Switch(_, _, longopt):
+			return longopt
 		}
 	}
 
