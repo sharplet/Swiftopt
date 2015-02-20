@@ -32,10 +32,10 @@ public enum Option: Hashable, Printable {
 		}
 	}
 
-	public var longopt: option {
+	public var longOption: option {
 		switch self {
-		case let .Switch(_, _, longopt):
-			return longopt
+		case let .Switch(_, _, longOption):
+			return longOption
 		}
 	}
 
