@@ -3,7 +3,7 @@
 import Darwin
 import Runes
 
-public final class ArgumentParser: SequenceType {
+public final class ArgumentParser {
 	public init(_ options: [Option], _ arguments: [String]) {
 		argv = arguments
 		opts = options
@@ -13,19 +13,20 @@ public final class ArgumentParser: SequenceType {
 		}
 	}
 
+	func parse() -> [Option: ParsedArgument] {
+		let old_optind = optind
+		optreset = 1
+		let parseResults = GeneratorOf { self.step() }
+		let parsed = Dictionary(parseResults)
+		optind = old_optind
+		return parsed
+	}
+
 	func step() -> (Option, ParsedArgument)? {
 		currentParseResult = withUnsafeMutableCStrings(argv) { argc, argv in
 			getopt_long(argc, argv, self.shortopts, self.longopts, nil)
 		}
 		return parsedArgument()
-	}
-
-	func parse() -> [Option: ParsedArgument] {
-		let old_optind = optind
-		optreset = 1
-		let parsed = Dictionary(self)
-		optind = old_optind
-		return parsed
 	}
 
 	private func parsedArgument() -> (Option, ParsedArgument)? {
@@ -48,10 +49,6 @@ public final class ArgumentParser: SequenceType {
 		}
 
 		return String(UnicodeScalar(UInt32(currentParseResult)))
-	}
-
-	public func generate() -> GeneratorOf<(Option, ParsedArgument)> {
-		return GeneratorOf { self.step() }
 	}
 
 	private let opts: [Option]
