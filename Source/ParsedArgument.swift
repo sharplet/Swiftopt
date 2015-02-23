@@ -3,6 +3,13 @@
 public enum ParsedArgument {
 	case Switch(Bool)
 
+	public init(_ option: Option) {
+		switch option {
+		case let .Switch(_, _, enabledByDefault):
+			self = .Switch(!enabledByDefault)
+		}
+	}
+
 	public var enabled: Bool? {
 		switch self {
 		case let .Switch(enabled):

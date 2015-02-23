@@ -36,7 +36,7 @@ public final class ArgumentParser {
 				return nil
 			default:
 				if let found = find(self.opts, { $0.name.hasPrefix(c) }) {
-					return (found, ParsedArgument.Switch(!found.enabledByDefault))
+					return (found, ParsedArgument(found))
 				}
 				return nil
 			}
