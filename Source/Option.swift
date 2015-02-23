@@ -4,18 +4,28 @@ import Darwin
 
 public enum Option: Hashable, Printable {
 	case Switch(String, UnicodeScalar, Bool)
+	case Required(String, UnicodeScalar)
+
+	public static func shortName(name: String) -> UnicodeScalar? {
+		return first(name.utf8).map { UnicodeScalar($0) }
+	}
 
 	public static func shortOptionString(options: [Option]) -> String {
 		return join("", options.map { $0.shortOptionString })
 	}
 
-	public init?(_ name: String, enabledByDefault: Bool = false) {
-		if let shortName = first(name.utf8).map({ UnicodeScalar($0) }) {
-			self = .Switch(
-				name,
-				shortName,
-				enabledByDefault
-			)
+	public init?(flag name: String, enabledByDefault: Bool = false) {
+		if let shortName = Option.shortName(name) {
+			self = .Switch(name, shortName, enabledByDefault)
+		}
+		else {
+			return nil
+		}
+	}
+
+	public init?(_ name: String, required: Bool) {
+		if let shortName = Option.shortName(name) where required {
+			self = .Required(name, shortName)
 		}
 		else {
 			return nil
@@ -26,6 +36,8 @@ public enum Option: Hashable, Printable {
 		switch self {
 		case let .Switch(name, _, _):
 			return name
+		case let .Required(name, _):
+			return name
 		}
 	}
 
@@ -33,18 +45,36 @@ public enum Option: Hashable, Printable {
 		switch self {
 		case let .Switch(_, shortName, _):
 			return shortName
+		case let .Required(_, shortName):
+			return shortName
 		}
 	}
 
-	public var enabledByDefault: Bool {
+	public var hasArgument: Int32 {
+		switch self {
+		case .Switch:
+			return no_argument
+		case .Required:
+			return required_argument
+		}
+	}
+
+	public var enabledByDefault: Bool? {
 		switch self {
 		case let .Switch(_, _, enabledByDefault):
 			return enabledByDefault
+		case .Required:
+			return nil
 		}
 	}
 
 	public var shortOptionString: String {
-		return String(shortName)
+		switch self {
+		case let .Required(_, shortName):
+			return "\(shortName):"
+		default:
+			return String(shortName)
+		}
 	}
 
 	public var hashValue: Int {

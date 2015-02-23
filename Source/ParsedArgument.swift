@@ -2,11 +2,19 @@
 
 public enum ParsedArgument {
 	case Switch(Bool)
+	case Required(String)
 
-	public init(_ option: Option) {
+	public init?(_ option: Option, argument: String? = nil) {
 		switch option {
 		case let .Switch(_, _, enabledByDefault):
 			self = .Switch(!enabledByDefault)
+		case .Required:
+			if let argument = argument {
+				self = .Required(argument)
+			}
+			else {
+				return nil
+			}
 		}
 	}
 
@@ -14,6 +22,17 @@ public enum ParsedArgument {
 		switch self {
 		case let .Switch(enabled):
 			return enabled
+		default:
+			return nil
+		}
+	}
+
+	public var argument: String? {
+		switch self {
+		case let .Required(argument):
+			return argument
+		default:
+			return nil
 		}
 	}
 }

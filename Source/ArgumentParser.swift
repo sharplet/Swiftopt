@@ -9,7 +9,7 @@ public final class ArgumentParser {
 		opts = options
 		shortopts = Option.shortOptionString(options)
 		longopts = map(options) { opt in
-			option(name: opt.name, has_arg: no_argument, flag: nil, val: Int32(opt.shortName.value))
+			option(name: opt.name, has_arg: opt.hasArgument, flag: nil, val: Int32(opt.shortName.value))
 		}
 	}
 
@@ -36,7 +36,14 @@ public final class ArgumentParser {
 				return nil
 			default:
 				if let found = find(self.opts, { $0.name.hasPrefix(c) }) {
-					return (found, ParsedArgument(found))
+					let parsed: ParsedArgument?
+					switch found {
+					case .Required:
+						parsed = String(UTF8String: optarg) >>- { ParsedArgument(found, argument: $0) }
+					case .Switch:
+						parsed = ParsedArgument(found)
+					}
+					return parsed.map { (found, $0) }
 				}
 				return nil
 			}
