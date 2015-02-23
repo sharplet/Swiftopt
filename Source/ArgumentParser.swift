@@ -6,11 +6,11 @@ import Runes
 public final class ArgumentParser: SequenceType {
 	public init(_ options: [Option], _ arguments: [String]) {
 		argv = arguments
+		opts = options
 		shortopts = Option.shortOptionString(options)
 		longopts = map(options) { opt in
 			option(name: opt.name, has_arg: no_argument, flag: nil, val: Int32(opt.shortName.value))
 		}
-		self.options = options
 	}
 
 	func step() -> (Option, ParsedArgument)? {
@@ -37,7 +37,7 @@ public final class ArgumentParser: SequenceType {
 			case "?":
 				return nil
 			default:
-				if let found = find(self.options, { $0.name.hasPrefix(c) }) {
+				if let found = find(self.opts, { $0.name.hasPrefix(c) }) {
 					return (found, ParsedArgument.Switch(!found.enabledByDefault))
 				}
 				return nil
@@ -57,7 +57,7 @@ public final class ArgumentParser: SequenceType {
 		return GeneratorOf { self.step() }
 	}
 
-	private let options: [Option]
+	private let opts: [Option]
 	private let argv: [String]
 	private let shortopts: String
 	private var longopts: [option] = []
