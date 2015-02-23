@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE26F8DA1A99890300224B27 /* UnsafeMutablePointerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26F8D91A99890300224B27 /* UnsafeMutablePointerBox.swift */; };
+		CE5F4B711A9B04BA000DF93E /* Find.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F4B701A9B04BA000DF93E /* Find.swift */; };
 		CE89CF6A1A928068003CBB97 /* Swiftopt.h in Headers */ = {isa = PBXBuildFile; fileRef = CE89CF691A928068003CBB97 /* Swiftopt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE89CF701A928068003CBB97 /* Swiftopt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE89CF641A928068003CBB97 /* Swiftopt.framework */; };
 		CE89CF811A9281F4003CBB97 /* Swiftopt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89CF801A9281F4003CBB97 /* Swiftopt.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		CE26F8D91A99890300224B27 /* UnsafeMutablePointerBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsafeMutablePointerBox.swift; sourceTree = "<group>"; };
+		CE5F4B701A9B04BA000DF93E /* Find.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Find.swift; sourceTree = "<group>"; };
 		CE89CF641A928068003CBB97 /* Swiftopt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftopt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE89CF681A928068003CBB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE89CF691A928068003CBB97 /* Swiftopt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swiftopt.h; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				CE89CF691A928068003CBB97 /* Swiftopt.h */,
+				CE5F4B701A9B04BA000DF93E /* Find.swift */,
 				CE89D04B1A9285E4003CBB97 /* Option.swift */,
 				CE89D04D1A928637003CBB97 /* ParsedArgument.swift */,
 				CE89CF801A9281F4003CBB97 /* Swiftopt.swift */,
@@ -279,6 +282,7 @@
 				CE89D04E1A928637003CBB97 /* ParsedArgument.swift in Sources */,
 				CE26F8DA1A99890300224B27 /* UnsafeMutablePointerBox.swift in Sources */,
 				CE8D805A1A95FF1500D2D678 /* UnsafePointerAdditions.swift in Sources */,
+				CE5F4B711A9B04BA000DF93E /* Find.swift in Sources */,
 				CE89D04C1A9285E4003CBB97 /* Option.swift in Sources */,
 				CE89CF811A9281F4003CBB97 /* Swiftopt.swift in Sources */,
 			);
