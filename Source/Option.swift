@@ -3,14 +3,18 @@
 import Darwin
 
 public enum Option: Hashable, Printable {
-	case Switch(String, UnicodeScalar, option)
+	case Switch(String, UnicodeScalar, Bool)
 
-	public init?(name: String) {
+	public static func shortOptionString(options: [Option]) -> String {
+		return join("", options.map { $0.shortOptionString })
+	}
+
+	public init?(_ name: String, enabledByDefault: Bool = false) {
 		if let shortName = first(name.utf8).map({ UnicodeScalar($0) }) {
 			self = .Switch(
 				name,
 				shortName,
-				option(name: name, has_arg: no_argument, flag: nil, val: Int32(shortName.value))
+				enabledByDefault
 			)
 		}
 		else {
@@ -32,11 +36,15 @@ public enum Option: Hashable, Printable {
 		}
 	}
 
-	public var longOption: option {
+	public var enabledByDefault: Bool {
 		switch self {
-		case let .Switch(_, _, longOption):
-			return longOption
+		case let .Switch(_, _, enabledByDefault):
+			return enabledByDefault
 		}
+	}
+
+	public var shortOptionString: String {
+		return String(shortName)
 	}
 
 	public var hashValue: Int {

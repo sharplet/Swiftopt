@@ -10,4 +10,10 @@ class SwiftoptTests: XCTestCase {
 		let result = Option("verbose") >>- { parse([$0], ["-v"])[$0] }
 		assertEqual(result?.enabled, true)
 	}
+
+	func testItParsesCompactFlags() {
+		let options = [Option("foo"), Option("bar")]
+		let result = map(parse(catOptionals(options), ["-fb"])) { $1.enabled }
+		assertEqual([true, true], catOptionals(result))
+	}
 }
