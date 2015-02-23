@@ -10,6 +10,7 @@
 		CE26F8DC1A99897400224B27 /* ArgumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26F8DB1A99897400224B27 /* ArgumentParser.swift */; };
 		CE5F4B711A9B04BA000DF93E /* Find.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F4B701A9B04BA000DF93E /* Find.swift */; };
 		CE5F4B741A9B12C5000DF93E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F4B731A9B12C5000DF93E /* Helpers.swift */; };
+		CE5F4B761A9B3997000DF93E /* DictionaryAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F4B751A9B3997000DF93E /* DictionaryAdditions.swift */; };
 		CE89CF6A1A928068003CBB97 /* Swiftopt.h in Headers */ = {isa = PBXBuildFile; fileRef = CE89CF691A928068003CBB97 /* Swiftopt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE89CF701A928068003CBB97 /* Swiftopt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE89CF641A928068003CBB97 /* Swiftopt.framework */; };
 		CE89CF811A9281F4003CBB97 /* Swiftopt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89CF801A9281F4003CBB97 /* Swiftopt.swift */; };
@@ -52,6 +53,7 @@
 		CE26F8DB1A99897400224B27 /* ArgumentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentParser.swift; sourceTree = "<group>"; };
 		CE5F4B701A9B04BA000DF93E /* Find.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Find.swift; sourceTree = "<group>"; };
 		CE5F4B731A9B12C5000DF93E /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		CE5F4B751A9B3997000DF93E /* DictionaryAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAdditions.swift; sourceTree = "<group>"; };
 		CE89CF641A928068003CBB97 /* Swiftopt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftopt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE89CF681A928068003CBB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE89CF691A928068003CBB97 /* Swiftopt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swiftopt.h; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				CE89CF691A928068003CBB97 /* Swiftopt.h */,
 				CE26F8DB1A99897400224B27 /* ArgumentParser.swift */,
+				CE5F4B751A9B3997000DF93E /* DictionaryAdditions.swift */,
 				CE5F4B701A9B04BA000DF93E /* Find.swift */,
 				CE89D04B1A9285E4003CBB97 /* Option.swift */,
 				CE89D04D1A928637003CBB97 /* ParsedArgument.swift */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE89D04E1A928637003CBB97 /* ParsedArgument.swift in Sources */,
+				CE5F4B761A9B3997000DF93E /* DictionaryAdditions.swift in Sources */,
 				CE8D805A1A95FF1500D2D678 /* UnsafePointerAdditions.swift in Sources */,
 				CE5F4B711A9B04BA000DF93E /* Find.swift in Sources */,
 				CE89D04C1A9285E4003CBB97 /* Option.swift in Sources */,

@@ -23,10 +23,7 @@ public final class ArgumentParser: SequenceType {
 	func parse() -> [Option: ParsedArgument] {
 		let old_optind = optind
 		optreset = 1
-		let parsed: [Option: ParsedArgument] = reduce(self, [:]) { (var result, each) in
-			result[each.0] = each.1
-			return result
-		}
+		let parsed = Dictionary(self)
 		optind = old_optind
 		return parsed
 	}
